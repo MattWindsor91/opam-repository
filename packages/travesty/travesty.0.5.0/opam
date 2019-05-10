@@ -1,0 +1,32 @@
+opam-version: "2.0"
+synopsis: "Monadically traversable containers"
+description:
+  "'Travesty' is a library for defining containers with monadic traversals,
+   inspired by Haskell's Traversable typeclass.  It sits on top of Jane Street's
+   Core library ecosystem."
+maintainer: "Matt Windsor <m.windsor@imperial.ac.uk>"
+authors: "Matt Windsor <m.windsor@imperial.ac.uk>"
+license: "MIT"
+doc: "https://MattWindsor91.github.io/travesty/"
+homepage: "https://MattWindsor91.github.io/travesty"
+bug-reports: "https://github.com/MattWindsor91/travesty/issues"
+depends: [
+  "ocaml" {>= "4.07"}
+  "dune" {build}
+  "ppx_deriving"
+  "ppx_expect"
+  "ppx_jane"
+  "ppx_sexp_message"
+  "core_kernel" {>= "v0.12" & < "v0.13"}
+]
+build: ["dune" "build" "-p" name "-j" jobs]
+run-test: ["dune" "runtest" "-p" name "-j" jobs]
+dev-repo: "git+https://github.com/MattWindsor91/travesty"
+url {
+  src:
+    "https://github.com/MattWindsor91/travesty/releases/download/v0.5.0/travesty-v0.5.0.tbz"
+  checksum: [
+    "sha256=915ffcd23006ee634b847ed0f81cc81fac9d96fccb4f364a3ab779ccaaa5fc16"
+    "sha512=84bd6eb8fa8945024428ec499703e8ed36af806b0d4379a34e7b0f794158777480a182764d5b4120d87140405035a2d0c89bae8f9aa1ed6060e6fde37dedc77d"
+  ]
+}
